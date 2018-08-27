@@ -5,3 +5,8 @@ services:
     build: .
     ports:
       - "8080:8080"
+      - "6800:6800"
+    environment:
+      PASSWORD: test
+    volumes:
+      - "./data:/data"

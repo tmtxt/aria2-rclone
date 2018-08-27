@@ -11,10 +11,14 @@ RUN npm install -g http-server
 EXPOSE 8080
 
 # aria2 process
+RUN apt-get install -y aria2
 EXPOSE 6800
 
 # Procfile management
 RUN npm install -g foreman
 ADD Procfile /usr/src/app/Procfile
+
+# directory for storing downloaded files and session
+RUN mkdir /data
 
 CMD ["nf", "start"]
