@@ -18,6 +18,11 @@ EXPOSE 6800
 RUN npm install -g foreman
 ADD Procfile /usr/src/app/Procfile
 
+# directory for the script when download complete
+RUN mkdir -p /usr/src/app/scripts
+ADD . /usr/src/app/scripts/complete.sh
+RUN chmod +x /usr/src/app/scripts/complete.sh
+
 # directory for storing downloaded files and session
 RUN mkdir /data
 
