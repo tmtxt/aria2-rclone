@@ -24,6 +24,9 @@ ADD complete.sh /usr/src/app/scripts/
 RUN chmod +x /usr/src/app/scripts/complete.sh
 
 # directory for storing downloaded files and session
-RUN mkdir /data
+VOLUME ["/data"]
+
+# default to disable rclone
+ENV RCLONE_ENABLED="false"
 
 CMD ["nf", "start"]
