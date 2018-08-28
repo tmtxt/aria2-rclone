@@ -20,7 +20,7 @@ ADD Procfile /usr/src/app/Procfile
 
 # directory for the script when download complete
 RUN mkdir -p /usr/src/app/scripts
-ADD . /usr/src/app/scripts/complete.sh
+ADD complete.sh /usr/src/app/scripts/
 RUN chmod +x /usr/src/app/scripts/complete.sh
 
 # directory for storing downloaded files and session
