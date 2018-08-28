@@ -8,5 +8,9 @@ services:
       - "6800:6800"
     environment:
       PASSWORD: test
+      RCLONE_ENABLED: "true"
+      RCLONE_REMOTE_NAME: gdrive
+      RCLONE_REMOTE_DIR: Aria2-Download
     volumes:
       - "./data:/data"
+      - "~/.config/rclone:/root/.config/rclone"

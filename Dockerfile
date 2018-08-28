@@ -26,6 +26,13 @@ RUN chmod +x /usr/src/app/scripts/complete.sh
 # directory for storing downloaded files and session
 VOLUME ["/data"]
 
+# rclone
+RUN apt-get install -y curl zip man-db
+RUN mkdir /usr/src/app/rclone
+WORKDIR /usr/src/app/rclone
+RUN curl https://rclone.org/install.sh | bash
+WORKDIR /usr/src/app
+
 # default to disable rclone
 ENV RCLONE_ENABLED="false"
 
