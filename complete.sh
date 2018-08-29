@@ -11,8 +11,9 @@ echo "rclone copy \"$3\" $RCLONE_REMOTE_NAME:$RCLONE_REMOTE_DIR"
 if [ "$RCLONE_ENABLED" = "true" ]
 then
     if [ "$3" = "" ]
-       echo "No FilePath"
     then
+        echo "No FilePath"
+    else
         rclone copy "$3" $RCLONE_REMOTE_NAME:$RCLONE_REMOTE_DIR
     fi
 else
