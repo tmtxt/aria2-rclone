@@ -14,3 +14,4 @@ services:
     volumes:
       - "./data:/data"
       - "~/.config/rclone:/root/.config/rclone"
+      - ".:/usr/src/app/scripts"

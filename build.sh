@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t tmtxt/aria2-rclone:1.0.4 .
+docker build -t tmtxt/aria2-rclone:1.0.5 .
