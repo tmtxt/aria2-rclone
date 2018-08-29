@@ -10,7 +10,7 @@ echo "rclone copy $3 $RCLONE_REMOTE_NAME:$RCLONE_REMOTE_DIR"
 
 if [ "$RCLONE_ENABLED" = "true" ]
 then
-    rclone copy $3 $RCLONE_REMOTE_NAME:$RCLONE_REMOTE_DIR
+    rclone copy "$3" $RCLONE_REMOTE_NAME:$RCLONE_REMOTE_DIR
 else
     echo "Done";
 fi
