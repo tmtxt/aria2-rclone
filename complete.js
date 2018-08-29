@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const childProcess = require('child_process');
+const path = require('path');
 
 const rcloneEnabled = process.env.RCLONE_ENABLED === 'true';
 const rcloneRemoteName = process.env.RCLONE_REMOTE_NAME;
@@ -43,3 +44,11 @@ if (fileCount === 1) {
 }
 
 // multiple file, create directory on remote first
+
+// get dir name first
+let filePathNoDataDir = filePath.substring(dataDir.length);
+if (filePathNoDataDir[0] === path.sep) {
+  filePathNoDataDir = filePathNoDataDir.substring(1);
+}
+const dirName = filePathNoDataDir.split(path.sep)[0];
+const dirPath = path.join(dataDir, dirName);
