@@ -33,7 +33,7 @@ $ docker run \
     -v /path/to/data:/data \
     -p 8080:8080 \
     -p 6800:6800 \
-    tmtxt/aria2-rclone:1.0.0
+    tmtxt/aria2-rclone:1.1.1
 ```
 
 You can then access to `localhost:8080` to open the Aria2 WebUI. You will also need to input the rpc
@@ -49,7 +49,7 @@ volume you want to store config file and use `rclone` to generate config file. F
 ```
 $ docker run --rm -it \
     -v /path/to/rclone/config:/root/.config/rclone \
-    tmtxt/aria2-rclone:1.0.0 \
+    tmtxt/aria2-rclone:1.1.1 \
     bash
 $ rclone config
 ```
@@ -70,16 +70,16 @@ $ docker run \
     -v /path/to/rclone/config:/root/.config/rclone \
     -p 8080:8080 \
     -p 6800:6800 \
-    tmtxt/aria2-rclone:1.0.0
+    tmtxt/aria2-rclone:1.1.1
 ```
 
 The downloaded files will be sent directly to the configured remote after downloaded.
 
 ## Use your own complete script
 
-The current image use the `complete.sh` script. You can override it to use your own script by
+The current image use the `complete.js` script. You can override it to use your own script by
 mounting another folder to `/usr/src/app/scripts`. That folder should container an executable file
-named `complete.sh`. Check
+named `complete.js`. Check
 [aria2 event hook documentation](https://aria2.github.io/manual/en/html/aria2c.html#event-hook)
 about the arguments passed to the script.
 
